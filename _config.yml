@@ -1,0 +1,4 @@
+name: Kyle Hausmann
+markdown: kramdown
+
+permalink: /blog/:year/:month/:day/:title
