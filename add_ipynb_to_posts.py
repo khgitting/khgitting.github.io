@@ -31,7 +31,7 @@ def main():
     lines = []
     lines.append('---')
     lines.append('layout: post')
-    lines.append('title: "{{{{ {} | title }}}}"'.format(title))
+    lines.append('title: "{{{{ \'{}\' | title }}}}"'.format(title))
     lines.append('date: {}'.format(date))
     lines.append('---')
     lines.append('')
