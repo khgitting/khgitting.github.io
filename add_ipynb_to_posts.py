@@ -14,6 +14,10 @@ def title_and_date_from_filepath(filepath):
     date = basename[:10]
     title = basename[11:-6]
     return title, date
+
+
+def titleize(title):
+    return ' '.join(word.capitalize() for word in title.split('-'))
     
 
 
@@ -31,7 +35,7 @@ def main():
     lines = []
     lines.append('---')
     lines.append('layout: post')
-    lines.append('title: "{{{{ \'{}\' | title }}}}"'.format(title))
+    lines.append('title: "{}"'.format(titleize(title)))
     lines.append('date: {}'.format(date))
     lines.append('---')
     lines.append('')

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "{{ 'notebook-attempt' | title }}"
+title: "Notebook Attempt"
 date: 2016-11-14
 ---
 
