@@ -6,7 +6,6 @@ HOME = os.environ['HOME']
 SITE_DIR = os.path.join(HOME, 'github/khgitting.github.io/')
 INCLUDES_DIR = os.path.join(SITE_DIR, '_includes/')
 POSTS_DIR = os.path.join(SITE_DIR, '_posts/')
-CSS = os.path.join(INCLUDES_DIR, 'main.css')
 
 
 def title_and_date_from_filepath(filepath):
@@ -40,8 +39,9 @@ def main():
     lines.append('date: {}'.format(date))
     lines.append('---')
     lines.append('')
+    lines.append('<div id="isolated-content">')
     lines.append('{{% include {html} %}}'.format(html=html))
-    lines.append('{{% include {css} %}}'.format(css=CSS))
+    lines.append('</div>')
 
     content = '\n'.join(lines)
 
