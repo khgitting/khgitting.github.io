@@ -47,5 +47,13 @@ def main():
         f.write(content)
 
 
+    # drop first line ( <!DOCTYPE html> ) from html file
+    with open(os.path.join(INCLUDES_DIR, html), 'r') as f:
+        lines = f.readlines()
+
+    with open(os.path.join(INCLUDES_DIR, html), 'w') as f:
+        f.writelines(lines[1:])
+
+
 if __name__ == '__main__':
     main()
