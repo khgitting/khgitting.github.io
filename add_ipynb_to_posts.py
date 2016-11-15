@@ -39,16 +39,12 @@ def main():
     lines.append('date: {}'.format(date))
     lines.append('---')
     lines.append('')
-    include = '{{% include {html} %}}'.format(html=html)
-    lines.append('<iframe srcdoc="{}">'.format(include))
-    # lines.append('{{% include {html} %}}'.format(html=html))
-    lines.append('</iframe>')
+    lines.append('{{% include {html} %}}'.format(html=html))
 
     content = '\n'.join(lines)
 
     with open(os.path.join(POSTS_DIR, md), 'w') as f:
         f.write(content)
-
 
     # drop first line ( <!DOCTYPE html> ) from html file
     with open(os.path.join(INCLUDES_DIR, html), 'r') as f:
