@@ -20,9 +20,6 @@ ax.plot(xs, ys);
 ```
 
 
-![png](2016-11-14-notebook-attempt_files/2016-11-14-notebook-attempt_2_0.png)
-
-
 
 ```python
 
