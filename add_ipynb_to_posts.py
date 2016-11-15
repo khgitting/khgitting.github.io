@@ -39,9 +39,10 @@ def main():
     lines.append('date: {}'.format(date))
     lines.append('---')
     lines.append('')
-    lines.append('<object id="isolated-notebook-content">')
-    lines.append('{{% include {html} %}}'.format(html=html))
-    lines.append('</object>')
+    include = '{{% include {html} %}}'.format(html=html)
+    lines.append('<iframe src="{}">'.format(include))
+    # lines.append('{{% include {html} %}}'.format(html=html))
+    lines.append('</iframe>')
 
     content = '\n'.join(lines)
 
@@ -50,9 +51,8 @@ def main():
 
 
     # drop first line ( <!DOCTYPE html> ) from html file
-    # and change to scoped style
     with open(os.path.join(INCLUDES_DIR, html), 'r') as f:
-        lines = [line.replace('<style ', '<style scoped ') for line in f.readlines()[1:]]
+        lines = f.readlines()[1:]
 
     with open(os.path.join(INCLUDES_DIR, html), 'w') as f:
         f.writelines(lines)
