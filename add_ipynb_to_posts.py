@@ -39,9 +39,9 @@ def main():
     lines.append('date: {}'.format(date))
     lines.append('---')
     lines.append('')
-    lines.append('<div id="isolated-content">')
+    lines.append('<object id="isolated-notebook-content">')
     lines.append('{{% include {html} %}}'.format(html=html))
-    lines.append('</div>')
+    lines.append('</object>')
 
     content = '\n'.join(lines)
 
