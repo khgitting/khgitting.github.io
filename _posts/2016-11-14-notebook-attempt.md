@@ -4,4 +4,4 @@ title: {{ notebook-attempt | title }}
 date: 2016-11-14
 ---
 
-{% include notebook-attempt.html %}
+{% include 2016-11-14-notebook-attempt.html %}
