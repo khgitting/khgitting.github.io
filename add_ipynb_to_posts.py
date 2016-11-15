@@ -40,7 +40,7 @@ def main():
     lines.append('---')
     lines.append('')
     include = '{{% include {html} %}}'.format(html=html)
-    lines.append('<iframe src="{}">'.format(include))
+    lines.append('<iframe srcdoc="{}">'.format(include))
     # lines.append('{{% include {html} %}}'.format(html=html))
     lines.append('</iframe>')
 
