@@ -50,11 +50,12 @@ def main():
 
 
     # drop first line ( <!DOCTYPE html> ) from html file
+    # and change to scoped style
     with open(os.path.join(INCLUDES_DIR, html), 'r') as f:
-        lines = f.readlines()
+        lines = [line.replace('<style ', '<style scoped ') for line in f.readlines()[1:]]
 
     with open(os.path.join(INCLUDES_DIR, html), 'w') as f:
-        f.writelines(lines[1:])
+        f.writelines(lines)
 
 
 if __name__ == '__main__':
