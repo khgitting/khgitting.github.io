@@ -24,7 +24,8 @@ def titleize(title):
 def main():
     # add to includes
     filepath = sys.argv[1]
-    cmd = 'jupyter nbconvert {} --output-dir {}'.format(filepath, INCLUDES_DIR)
+    cmd = ('jupyter nbconvert {} --to html --template full --output-dir {}'
+           .format(filepath, INCLUDES_DIR))
     call(cmd.split())
 
     # add new _posts/ md
@@ -33,11 +34,11 @@ def main():
     md = base + '.md'
     html = base + '.html'
     lines = []
-    lines.append('---')
-    lines.append('layout: post')
-    lines.append('title: "{}"'.format(titleize(title)))
-    lines.append('date: {}'.format(date))
-    lines.append('---')
+    # lines.append('---')
+    # lines.append('layout: post')
+    # lines.append('title: "{}"'.format(titleize(title)))
+    # lines.append('date: {}'.format(date))
+    # lines.append('---')
     lines.append('')
     lines.append('{{% include {html} %}}'.format(html=html))
 
